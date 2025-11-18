@@ -1,71 +1,70 @@
-**Stack** adalah struktur data yang bekerja dengan prinsip **LIFO (Last In, First Out)** — artinya **elemen terakhir yang dimasukkan akan menjadi yang pertama dikeluarkan**.
 
-Bayangkan tumpukan piring:
-
-* Piring yang terakhir diletakkan di atas adalah yang pertama kali diambil.
-* Piring yang di bawah hanya bisa diambil setelah piring di atasnya diangkat.
+1. PENJELASAN QUEUE
+   
+Kode berikut menunjukkan cara membuat antrian sederhana di Python. Antrian bekerja seperti barisan orang yang menunggu giliran: siapa yang datang dulu, dia yang diproses terlebih dahulu.
 
 ---
 
-### 🧩 **Ciri-ciri Stack**
-
-1. Akses data hanya melalui satu ujung (disebut **top**).
-2. Dua operasi utama:
-
-   * **Push** → menambahkan data ke atas tumpukan.
-   * **Pop** → menghapus data dari atas tumpukan.
-3. Operasi tambahan (kadang ada):
-
-   * **Peek / Top** → melihat elemen paling atas tanpa menghapusnya.
-   * **isEmpty** → memeriksa apakah stack kosong.
-   * **isFull** → memeriksa apakah stack penuh (jika ukurannya tetap).
-
----
-
-### ⚙️ **Contoh Konseptual**
-
-Misalnya ada stack kosong, lalu dilakukan:
-
-```
-Push(A) → Stack: [A]
-Push(B) → Stack: [A, B]
-Push(C) → Stack: [A, B, C]
-Pop()   → Keluarkan C → Stack: [A, B]
-```
-
-Urutan keluar: **C, lalu B, lalu A** → sesuai prinsip **LIFO**.
-
----
-
-### 💻 **Contoh Program (Python)**
+1. Membuat Antrian Kosong
 
 ```python
-stack = []
-
-# Menambah elemen (Push)
-stack.append('A')
-stack.append('B')
-stack.append('C')
-
-# Menghapus elemen (Pop)
-print(stack.pop())  # Output: C
-
-# Melihat elemen teratas
-print(stack[-1])    # Output: B
-
-# Mengecek apakah stack kosong
-print(len(stack) == 0)
+queue = []
 ```
 
----
-
-### 📘 **Contoh Penggunaan Stack di Dunia Nyata**
-
-1. **Undo/Redo** pada aplikasi (Word, Photoshop, dll).
-2. **Back/Forward** pada browser.
-3. **Evaluasi ekspresi matematika** (misalnya infix ke postfix).
-4. **Penyimpanan pemanggilan fungsi (Call Stack)** pada program.
+Baris ini menyiapkan sebuah list kosong yang akan digunakan sebagai tempat menampung elemen-elemen antrian.
 
 ---
 
-Kamu mau saya lanjutkan dengan **perbedaan Stack dan Queue**, atau **cara membuat Stack sendiri (tanpa list bawaan Python)?**
+### **2. Menambahkan Elemen ke Dalam Antrian**
+
+```python
+queue.append('A')
+queue.append('B')
+queue.append('C')
+```
+
+Dengan menggunakan `append()`, setiap data baru ditempatkan di bagian belakang antrian. Setelah tiga perintah ini, urutan datanya menjadi A, lalu B, kemudian C.
+
+---
+
+### **3. Mengambil Elemen Pertama (Dequeue)**
+
+```python
+element = queue.pop(0)
+```
+
+Perintah `pop(0)` menghapus dan mengembalikan elemen yang berada di posisi paling depan. Karena A berada di urutan pertama, maka A yang keluar dari antrian.
+
+---
+
+### **4. Melihat Elemen Paling Depan**
+
+```python
+frontElement = queue[0]
+```
+
+Kode ini hanya menampilkan isi antrian terdepan setelah proses dequeue, tanpa menghapus elemen tersebut.
+
+---
+
+### **5. Mengecek Apakah Antrian Masih Berisi**
+
+```python
+isEmpty = not bool(queue)
+```
+
+Dengan mengevaluasi `bool(queue)`, kita bisa mengetahui apakah antrian masih memiliki elemen atau tidak. Penggunaan `not` membalik nilai tersebut agar lebih mudah dibaca.
+
+---
+
+### **6. Mengetahui Jumlah Data Dalam Antrian**
+
+```python
+print("Size: ", len(queue))
+```
+
+Perintah `len(queue)` mengembalikan jumlah elemen yang tersisa. Karena elemen pertama sudah diambil, sekarang ada dua item yang masih ada dalam antrian.
+
+---
+
+
