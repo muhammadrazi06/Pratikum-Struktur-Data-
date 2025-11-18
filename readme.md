@@ -68,3 +68,78 @@ Perintah `len(queue)` mengembalikan jumlah elemen yang tersisa. Karena elemen pe
 ---
 
 
+
+Siap, aku parafrase penjelasan untuk kode **Stack** ini dengan gaya berbeda dan tidak mirip dengan penjelasan Queue tadi.
+
+---
+
+2. PENJELASAN STACK
+
+Kode berikut memperlihatkan bagaimana cara membuat dan menggunakan **Stack** di Python. Stack bekerja dengan prinsip **LIFO (Last In, First Out)** — data yang terakhir dimasukkan akan menjadi yang pertama diambil.
+
+---
+
+### **1. Membuat Stack Kosong**
+
+```python
+stack = []
+```
+
+Bagian ini membuat sebuah list kosong yang berfungsi sebagai wadah data untuk stack.
+
+---
+
+### **2. Push (Menambahkan Elemen ke Puncak Stack)**
+
+```python
+stack.append('A')
+stack.append('B')
+stack.append('C')
+```
+
+Setiap kali `append()` dipanggil, elemen baru ditempatkan di posisi paling atas dari stack. Urutannya menjadi A → B → C, dengan C sebagai elemen teratas.
+
+---
+
+### **3. Pop (Mengambil Elemen Teratas)**
+
+```python
+element = stack.pop()
+```
+
+Karena stack menggunakan konsep LIFO, `pop()` secara otomatis mengambil elemen terakhir yang dimasukkan. Dalam kasus ini, C yang keluar.
+
+---
+
+### **4. Peek (Melihat Elemen Teratas Tanpa Menghapus)**
+
+```python
+topElement = stack[-1]
+```
+
+Kode ini hanya menampilkan elemen paling atas saat ini. Karena C sudah di-pop, elemen teratas menjadi B.
+
+---
+
+### **5. Mengecek Apakah Stack Kosong**
+
+```python
+isEmpty = not bool(stack)
+```
+
+Nilai stack akan dianggap kosong jika list tidak berisi apa pun. Dengan `not bool(stack)`, kita dapat mengetahui apakah masih ada elemen yang tersisa.
+
+---
+
+### **6. Mengetahui Jumlah Elemen di Dalam Stack**
+
+```python
+print("Size: ", len(stack))
+```
+
+`len(stack)` menghitung banyaknya elemen yang masih ada di dalam stack. Setelah satu elemen di-pop, jumlahnya tersisa dua.
+
+---
+
+
+
